@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Denoise Pro</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="logo-icon">
+                    <path d="M12 2v20M17 5v14M7 5v14M22 8v8M2 8v8" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#3b82f6" />
+                            <stop offset="1" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>CleanAudio <span>AI</span></h1>
+            </div>
+            <p class="subtitle">State-of-the-Art Gunshot Denoising Model</p>
+        </header>
+
+        <!-- Main Interface Card -->
+        <section class="glass-card">
+            
+            <!-- Upload Area -->
+            <div id="drop-zone" class="drop-zone">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Drag & Drop Audio</h3>
+                <p>or click to browse (MP3/WAV)</p>
+                <input type="file" id="file-input" accept="audio/*" hidden>
+            </div>
+            
+            <div id="file-info" class="file-info hidden">
+                <div class="file-details">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <span id="file-name">filename.mp3</span>
+                </div>
+                <button id="remove-btn" class="icon-btn">✕</button>
+            </div>
+
+            <!-- Processing Button & Status -->
+            <button id="process-btn" class="primary-btn" disabled>Denoise Audio</button>
+            
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Neural Network is processing...</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+            </div>
+
+            <!-- Result Area -->
+            <div id="result-area" class="result-area hidden">
+                <div class="success-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Denoising Complete
+                </div>
+                
+                <div class="audio-player">
+                    <p class="player-label">Clean Output</p>
+                    <audio id="audio-output" controls></audio>
+                </div>
+                
+                <a id="download-btn" class="download-btn" download>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download Clean Audio
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

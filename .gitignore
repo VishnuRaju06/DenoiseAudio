@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environment variables
+.env
+
+# Large model weights (too big for standard git)
+*.pth
+*.pt
+*.onnx
+*.h5
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Audio files (temp and outputs)
+*.mp3
+*.wav
+*.flac
