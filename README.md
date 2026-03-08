@@ -4,6 +4,10 @@ A state-of-the-art PyTorch U-Net audio denoising project that targets and remove
 
 This project features a custom, premium web application built with a **FastAPI backend** and a beautiful **HTML/CSS/JS frontend** using glassmorphism design.
 
+## Dataset & Training
+- **Dataset**: The model was trained on the custom [Gunshot Dataset](https://www.kaggle.com/datasets/vishnu0609/gunshot-dataset) from Kaggle.
+- **Training Notebook**: The complete training code and approach can be found in `gunshot-dae-conunet.ipynb` included in this repository.
+
 ## Features
 
 - **Custom CNN Architecture**: Utilizes a PyTorch U-Net variant (`unet_model.py`) optimized for audio spectrogram masking.
