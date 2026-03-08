@@ -10,7 +10,6 @@ __pycache__/
 .env
 
 # Large model weights (too big for standard git)
-*.pth
 *.pt
 *.onnx
 *.h5
