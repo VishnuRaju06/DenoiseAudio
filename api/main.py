@@ -25,6 +25,11 @@ app.add_middleware(
 # Serve the frontend statically at "/frontend"
 app.mount("/frontend", StaticFiles(directory="frontend", html=True), name="frontend")
 
+# Serve the main page at "/"
+@app.get("/")
+async def read_root():
+    return FileResponse("frontend/index.html", media_type="text/html")
+
 # Warm up the model on startup
 @app.on_event("startup")
 def startup_event():
